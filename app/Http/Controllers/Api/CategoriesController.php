@@ -15,10 +15,6 @@ class CategoriesController extends Controller
      */
     protected $repository;
 
-    /**
-     * @var CategoryValidator
-     */
-    protected $validator;
 
     public function __construct(CategoryRepository $repository)
     {

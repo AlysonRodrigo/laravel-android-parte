@@ -21,4 +21,8 @@ class Billpay extends Model implements Transformable
         'user_id'
     ];
 
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
+
 }

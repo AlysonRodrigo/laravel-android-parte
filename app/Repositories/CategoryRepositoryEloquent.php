@@ -2,6 +2,7 @@
 
 namespace Cookiesoft\Repositories;
 
+use Cookiesoft\Presenters\CategoryPresenter;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Cookiesoft\Models\Category;
@@ -30,6 +31,11 @@ class CategoryRepositoryEloquent extends BaseRepository implements CategoryRepos
     public function boot()
     {
         $this->pushCriteria(app(RequestCriteria::class));
+    }
+
+    public function presenter()
+    {
+        return CategoryPresenter::class;
     }
 
     public function applyMultitenancy()

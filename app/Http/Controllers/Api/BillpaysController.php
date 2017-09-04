@@ -18,11 +18,6 @@ class BillpaysController extends Controller
      */
     protected $repository;
 
-    /**
-     * @var BillpayValidator
-     */
-    protected $validator;
-
     public function __construct(BillpayRepository $repository)
     {
         $this->repository = $repository;
@@ -102,5 +97,9 @@ class BillpaysController extends Controller
                 'error' => 'Resource can not be deleted'
             ],500);
         }
+    }
+
+    public function calculateTotal(){
+        return $this->repository->calculateTotal();
     }
 }

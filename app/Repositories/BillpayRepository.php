@@ -10,5 +10,5 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  */
 interface BillpayRepository extends RepositoryInterface, RepositoryMultitenancyInterface
 {
-    //
+    public function calculateTotal();
 }

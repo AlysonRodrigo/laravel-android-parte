@@ -12,6 +12,8 @@ use Cookiesoft\Models\Billpay;
 class BillpayTransformer extends TransformerAbstract
 {
 
+    protected $defaultIncludes = ['category'];
+
     /**
      * Transform the \Billpay entity
      * @param \Billpay $model
@@ -22,11 +24,16 @@ class BillpayTransformer extends TransformerAbstract
     {
         return [
             'id'         => (int) $model->id,
-
-            /* place your other model properties here */
-
+            'name'       => $model->name,
+            'date_due'   => $model->date_due,
+            'value'      => (float) $model->value,
+            'done'       => (bool) $model->done,
             'created_at' => $model->created_at,
             'updated_at' => $model->updated_at
         ];
+    }
+
+    public function includeCategory(Billpay $model){
+        return $this->item($model->category, new CategoryTransformer());
     }
 }

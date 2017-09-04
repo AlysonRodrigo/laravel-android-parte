@@ -166,6 +166,8 @@ return [
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
         HipsterJazzbo\Landlord\LandlordServiceProvider::class,
+        L5Swagger\L5SwaggerServiceProvider::class,
+        Barryvdh\Cors\ServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -233,8 +235,6 @@ return [
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'Landlord'   => HipsterJazzbo\Landlord\Facades\Landlord::class,
-
-
     ],
 
 ];
